@@ -1,0 +1,56 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+
+
+<script type="text/javascript">
+
+    window.addEventListener('load', inicio, false);
+
+    function inicio() {
+        for (var x = 0; x <= 9; x++) {
+            document.getElementById('boton' + x).addEventListener('click', presion, false);
+        }
+    }
+
+    function presion(evt) {
+        document.getElementById('resultado').innerHTML =
+            document.getElementById('resultado').innerHTML + evt.target.value;
+            console.log("target ",evt.target.value);
+            console.log("type ",evt.type);
+            console.log("button ",evt.button);
+            
+    }
+
+</script>
+
+<style>
+  .boton{
+    width:50px;
+    height:50px;
+  }
+  #resultado {
+    font-size:40px;
+  }
+</style>
+
+</head>
+<body>
+
+
+<input type="button" id="boton0" name="boton0" value="0" class="boton">
+<input type="button" id="boton1" name="boton1" value="1" class="boton">
+<input type="button" id="boton2" name="boton2" value="2" class="boton">
+<input type="button" id="boton3" name="boton3" value="3" class="boton">
+<input type="button" id="boton4" name="boton4" value="4" class="boton">
+<input type="button" id="boton5" name="boton5" value="5" class="boton">
+<input type="button" id="boton6" name="boton6" value="6" class="boton">
+<input type="button" id="boton7" name="boton7" value="7" class="boton">
+<input type="button" id="boton8" name="boton8" value="8" class="boton">
+<input type="button" id="boton9" name="boton9" value="9" class="boton">
+<br>
+<div id="resultado"></div>
+
+</body>
+</html>

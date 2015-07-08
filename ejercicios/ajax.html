@@ -1,0 +1,52 @@
+<!DOCTYPE html >
+<html>
+<head>
+<title>Hola Mundo con AJAX</title>
+ 
+<script type="text/javascript">
+
+function descargaArchivo() {
+  // Obtener la instancia del objeto XMLHttpRequest
+  if(window.XMLHttpRequest) {
+    peticion_http = new XMLHttpRequest();
+  }
+  //en internet explorer
+  else if(window.ActiveXObject) {
+    peticion_http = new ActiveXObject("Microsoft.XMLHTTP");
+  }
+ 
+  // Preparar la funcion de respuesta
+  //onreadystatechange – Contiene el nombre de la función que se ejecuta cada vez que el estado de la conexión cambie.
+  peticion_http.onreadystatechange = muestraContenido;
+ 
+  // Realizar peticion HTTP 
+
+  //El método open prepara una conexión HTTP a través del objeto XMLHttpRequest con un método y una URL especificados.
+  //open(método,URL,asíncrona,nombre,password) – Abre una conexión con esa URL mediante ese metodo (GET o POST), aplicando los valores opcionales de la derecha (ahora se explicará).
+
+  peticion_http.open('GET', 'http://yac.net16.net/ejercicios/holamundo.json', true);
+  //send(contenido) – Envía el contenido al servidor.
+  peticion_http.send(null);
+ 
+  function muestraContenido() {
+  	//readyState – Estado de la conexión, puede valer desde 0 (no iniciada) hasta 4 (completado).
+    if(peticion_http.readyState == 4) {
+    	//status – Código enviado por el servidor, del tipo 404 (documento no encotrado) o 200 (OK).
+      if(peticion_http.status == 200) {
+      	//responseText – Datos devueltos por el servidor en formato cadena.
+      	var a = JSON.parse(peticion_http.responseText);
+      	for(var i = 0; i < a.length; i++ )  
+  alert('El libro: ' + a[i].Titulo + ' es del autor: ' + a[i].Autor); 
+
+        //alert(a[0].Titulo);
+      }
+    }
+  }
+}
+ 
+window.onload = descargaArchivo;
+</script>
+ 
+</head>
+<body></body>
+</html>

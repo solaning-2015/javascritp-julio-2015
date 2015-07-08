@@ -1,0 +1,1133 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Javascript 2015 - Solaning</title>
+
+		<meta name="description" content="Curso javascript">
+		<meta name="author" content="Jose Luis Yacelly Ramos">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+
+		<!-- externas -->
+        <link href="media/css/bootstrap/bootstrap.min.css" rel="stylesheet" />
+        <link href="media/css/bootstrap/bootstrap-theme.min.css"
+              rel="stylesheet" />
+        <script src="media/js/bootstrap.min.js"></script>
+     	<script src="media/js/jquery.min.js"></script>
+        <script src="media/js/holder.js"></script>
+        <!-- 
+        <link href="media/css/impress.css" rel="stylesheet" />
+        <link href="media/css/prettify/prettify.css" rel="stylesheet" />
+        <link href="media/css/prettify/sons-of-obsidian.css" rel="stylesheet" /> 
+
+     <!-- 
+        <script src="media/js/prettify.js"></script>-->
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					
+				<section>
+					<h1>Javascript Basico</h1>
+					<p>
+						<small>Instructor <a href="http://yac.uphero.net" target="_blank">Jose Luis Yacelly Ramos</a> / <a href="http://twitter.com/yacel100" target="_blank">@yacel100</a></small>
+					<br>
+					<br>
+
+	               
+	                <h5 class="absolute-element" style="position: center; width: 400x; height: 68px; z-index: 4; left: 411px; top: 584px;"><center>Martes, 7 de julio del 2015</center></h5>
+	                 
+
+				</section>
+
+				 <section>
+					<h1>Guia de diapositivas</h1>
+					<ol>
+						<li><a href="#/1"> Generalidades e historia</a></li>
+						<li><a href="#/6"> Herramientas</a></li>
+						<li><a href="#/7">Repaso de HTML</a></li>
+						<li><a href="#/8">Estructura del lenguaje</a></li>
+						<li><a href="#/14">Variables, declaraciones, y expresiones</a></li>
+						<li><a href="#/15">Tipos de datos</a></li>
+						<li><a href="#/19">Operadores</a></li>
+						<!--
+						<li><a href="#/19">Trabajando con javascript (online)</a></li>
+						<li><a href="#/20">Operadores</a></li>
+						<li><a href="#/37">Captura de Errores</a></li>
+						<li><a href="#/40">Funciones</a></li>
+						<li><a href="#/46">Arreglos</a></li>
+						<li><a href="#/47">Objetos</a></li>
+						<li><a href="#/60">JSON</a></li>
+						<li><a href="#/65">JAVASCRIPT EN EL NAVEGADOR(Windows Object)</a></li> -->
+					</ol>
+				</section>
+						<!-- <section>	
+						<ol start="13"> 
+						<li><a href="#/78">DOM(I)</a></li>
+						<li><a href="#/96">DOM(II)</a></li>
+						<li><a href="#/117">Eventos</a></li> 
+						<li><a href="#/131">Ajax</a></li> 
+						<li><a href="#/">Bootstrap</a></li> 
+						</ol>
+						</section> -->
+					
+				</section>
+<!-- 				<section>
+					<h2>Indice de practicas </h2>
+					<ul>
+						<li><a href="#/9">practica 1 - gist (19 de febrero)</a></li>
+						<li><a href="#/53">practica 2 - excepciones (26 de febrero)</a></li>
+						<li><a href="#/54">practica 3 - recursivo (26 de febrero)</a></li>
+						<li><a href="#/67">practica 4 - extra (27 de febrero)</a></li>
+						<li><a href="#/68">practica 4 - objeto (27 de febrero)</a></li>
+						<li><a href="#/74">practica 5 - json (2 de marzo)</a></li>
+					</ul>
+
+				</section> -->
+
+				<section>
+					
+					<section>
+						<h1>Generalidades</h1>
+	                <blockquote>
+
+	                	JavaScript es un lenguaje de programación, utilizado
+	                    comunmente como parte de los navegadores web, este permite
+	                    crear 
+	                    <strong><em>interacción con el usuario</em></strong>,
+	                    <strong><em>controlar la navegación</em></strong>, 
+	                    <strong>
+	                    <em>manejar comunicación asincrona</em>
+	                    </strong>, y <strong>
+	                    <em>alterar el contenido del documento presentado</em>
+	                    </strong>.
+
+	                </blockquote>
+	                <small>Fuente:
+		                <a target="_blank"
+		                   href="http://es.wikipedia.org/wiki/JavaScript">
+		                    http://es.wikipedia.org/wiki/JavaScript</a>
+	                </small>
+	                
+					</section>
+					<section>
+						<h1>historia</h1>
+						<ul>
+							<li>Historia El lenguaje fue inventado por Brendan Eich en la empresa Netscape Communications, que es la que desarrolló los primeros navegadores web comerciales. </li>
+							<li>Apareció por primera vez en el producto de Netscape llamado Netscape Navigator 2.0. </li>
+							<li>Tradicionalmente, se venía utilizando en páginas web HTML, para realizar tareas y operaciones en el marco de la aplicación únicamente cliente, sin acceso a funciones del servidor. </li>
+							<li>JavaScript se ejecuta en el agente de usuario al mismo tiempo que las sentencias van descargándose junto con el código HTML.</li>
+						</ul>
+						<small>guerra de los navegadores:
+		                <a target="_blank"
+		                   href="https://www.youtube.com/watch?v=Jf_Mm-Ay48o&list=PLCuQzHUa8dLA5s3oPkg6MMy6Ha3Yz24H-">
+		                    ver video</a>
+	                </small>
+					</section>
+				</section>
+				<section>
+					<section>
+					<h1>Diseño web</h1>
+		            <br />
+		            <div class="row text-center">
+		            <div class="col-xs-4">
+		                <img src="media/svg/js1.svg" alt="" />
+		                    <div class="caption">
+		                    <p><strong>contenido</strong></p>
+		                    </div>
+		            </div>
+		            <div class="col-xs-4">
+		                <img src="media/svg/js2.svg" alt="HTML" />
+		                <div class="caption">
+		                    <p><strong>presentación</strong></p>
+		                </div>
+		            </div>
+		                <div class="col-xs-4">
+	                        <img src="media/svg/js3.svg" alt="HTML" />
+	                        <div class="caption">
+	                            <p><strong>comportamiento</strong></p>
+	                        </div>
+		                    </div>
+		                </div>
+					</section>
+					<section>
+						<img class="absolute-element" style="width: 789px; height: 302px; max-height: none; max-width: none; position: absolute; z-index: 6; left: 42px; top: 337px;" src="https://s3.amazonaws.com/media-p.slid.es/uploads/yacel100/images/520697/html5_css3_javascript.jpg">
+						<img class="absolute-element" style="width: 879px; height: 483px; max-height: none; max-width: none; position: absolute; z-index: 5; left: 9px; top: 22px;" src="https://s3.amazonaws.com/media-p.slid.es/uploads/yacel100/images/520716/imagen_casa.png">
+						<br>
+					</section>
+				</section>
+				<section>
+					<section >
+						<h2>Layout engines - Rendering engine</h2>
+	                <div class="text-center">
+	                    <img src="media/svg/js4.svg" alt="" /></div>
+					</section>
+
+					<section>
+						 <h1>JavaScript engines</h1>
+	                 <div class="text-center">
+	                     <img src="media/svg/js5.svg" alt="" /></div>
+					</section>
+				</section>
+
+				<section>
+					 <h2>Hello world en el navegador</h2>
+	                <pre class="prettyprint linenums">
+
+						alert('Hello world');
+
+					</pre>
+					 <br>
+	                <h2>Hello world en la consola</h2>
+	                <pre class="prettyprint linenums">
+
+							console.log('Hello world');
+
+					</pre>
+	                <br>
+				</section>
+				<section>
+					<section>
+						
+						<h1>Ejecución del código</h1>
+                
+                	
+	                    <h3 > Interpretación en una página web</h3>
+	                    	<img src="http://www.mastermagazine.info/termino/wp-content/uploads/HTML.jpg" style="width: 577px; height: 432.74999999999994px; max-height: none; max-width: none;">
+   							 <br>
+
+					</section>
+					<section>
+						<h2>Interpretación en una página web (I)</h2>
+		                <pre class="prettyprint linenums">&lt;!doctype html&gt;
+							&lt;html&gt;
+							    &lt;head&gt&lt;/head&gt;
+							    &lt;body&gt
+							        &lt;script&gt;
+							            alert('Hello world')
+							        &lt;/script&gt;
+							    &lt;/body&gt;
+							&lt;/html&gt;</pre>
+		            
+					</section>
+					<section>
+						<h2>Interpretación en una página web (II)</h2>
+		                <pre class="prettyprint linenums">&lt;!doctype html&gt;
+							&lt;html&gt;
+							    &lt;head&gt&lt;/head&gt;
+							    &lt;body&gt
+							        &lt;script src="ejemplo.js"&gt;&lt;/script&gt;
+							    &lt;/body&gt;
+							&lt;/html&gt;</pre>
+							                <pre class="prettyprint linenums">// ejemplo.js
+							alert('Hello world')</pre>
+					</section>
+					<section>
+						<h1>Ejecución del código</h1>
+	                    <h3 > Interpretación con firebug</h3>
+                		<br>
+						<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/yacel100/images/521108/firebug.jpg" style="width: 674px; height: 377px; max-height: none; max-width: none; position: absolute; z-index: 4; left: 118px; top: 232px;" class="absolute-element">
+
+					</section>
+					<section>
+						<h1>Ejecución del código</h1>
+	                    <h3 > Interpretación en terminal (node.js)</h3>
+						<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/yacel100/images/521131/Terminal_002.png" style="width: 676px; height: 254.78030303030303px; max-height: none; max-width: none; position: absolute; z-index: 4; left: 138px; top: 285px;" class="absolute-element">
+
+		                <small>Fuente:
+			                <a target="_blank"
+			                   href="http://geekytheory.com/node-js-primeros-pasos-y-hola-mundo/">
+			                    http://geekytheory.com/node-js-primeros-pasos-y-hola-mundo/</a>
+		                </small>
+
+					</section>
+                
+                
+				</section>
+				<section>
+				<section>
+					<h1>herramientas</h1>
+					<h3>Editores de texto</h3>
+					<ul>
+						<li>Notepad++</li>
+						<li>Blog de Notas</li>
+						<li>Gedit</li>
+						<li>Sublime Text (Recomendado) </li>
+					</ul>
+				</section>
+				<section>
+					<h1>herramientas</h1>
+					<h3>navegadores</h3>
+					<ul>
+						<li>Opera</li>
+						<li>Safari</li>
+						<li>Google Chrome(Recomendado)</li>
+						<li>Firefox(<a href="https://getfirebug.com/">descargar firebug</a>) </li>
+					</ul>
+				</section>
+				<section>
+					<h1>herramientas</h1>
+					<h3>Terminal</h3>
+					<ul>
+						<li>NODE.js(Recomendado)</li>
+					</ul>
+				</section>
+				</section>
+				<section>
+				<section>
+					<h1>Repaso de HTML</h1>
+					 <pre >&lt;!doctype html&gt;
+							&lt;html&gt;
+							    &lt;head&gt&lt;/head&gt;
+							    &lt;body&gt
+							    &lt;h1&gt;bienvenidos&lt;/h1&gt;
+							        &lt;p&gt;Esto es un parrafo
+							        &lt;/p&gt;
+							        <strong style="color:#5C6AC6">	
+							        &lt;script&gt;
+							            alert('Hello world');
+							        &lt;/script&gt;
+							        </strong>
+							    &lt;/body&gt;
+							&lt;/html&gt;</pre>
+		            
+
+					<small>Guia de HTML5
+		                <a target="_blank"
+		                   href="http://dropbox.com">
+		                    se encuentra en el dropbox</a>
+	                </small>
+					
+				</section>
+				<section>
+										<pre>
+					&lt;!DOCTYPE html &gt;
+					&lt;html&gt;
+					&lt;head&gt;
+					  &lt;title&gt;Mi primera página&lt;/title&gt;
+					&lt;/head&gt;
+
+					&lt;body&gt;
+
+					&lt;!-- Menú de navegación del sitio --&gt;
+					&lt;nav&gt;
+					&lt;ul &gt;
+					  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Página principal&lt;/a&gt;
+					  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;pagina 2&lt;/a&gt;
+					&lt;/ul&gt;
+					&lt;/nav&gt;
+					&lt;!-- Contenido principal --&gt;
+					&lt;h1&gt;Mi primera página con estilo&lt;/h1&gt;
+					&lt;p&gt;¡Bienvenido a mi primera página con estilo!
+					&lt;!-- Firma y fecha de la página, ¡sólo por cortesía! --&gt;
+					&lt;address&gt;Creada el 7 de julio de 2015&lt;br&gt;
+					  por mí mismo.&lt;/address&gt;
+					&lt;/body&gt;
+					&lt;/html&gt;
+					</pre>
+
+				   <p>En realidad, no es necesario escribir el código: puedes copiarlo
+				    y pegarlo directamente en un editor.</p>
+
+				</section>
+				<section>
+					<h1>Pagina con Estilo</h1>
+					   <pre>
+					&lt;!DOCTYPE html&gt;
+					&lt;html&gt;
+					&lt;head&gt;
+					  &lt;title&gt;Mi primera página&lt;/title&gt;
+					  <strong style="color:#F60C0C">&lt;style type=&quot;text/css&quot;&gt;
+					  body {
+					    color: purple;
+					    background-color: #d8da3d }
+					  &lt;/style&gt;</strong>
+					&lt;/head&gt;
+
+					&lt;body&gt;
+					[etc.]
+					</pre>
+					<p>solo las letras que esta en color <strong style="color:#F60C0C">rojo </strong> puedes copiarlo
+				    y pegarlo directamente en un editor.</p>
+				    <small>Referencia: 
+		                <a target="_blank"
+		                   href="http://www.w3.org/Style/Examples/011/firstcss.es.html">
+		                     ver el ejemplo completo </a>
+	                </small><br>
+				    <small>Libro HTML: 
+		                <a target="http://dropbox.com">
+		                     Se encuentra en el dropbox </a>
+	                </small>
+				</section>
+				</section>
+				
+				<section>
+					<h1>Estructura del lenguaje</h1>
+                <ul >
+                    <li class="fragment">Comentarios</li>
+                    <li class="fragment">Literales</li>
+                    <li class="fragment">Identificadores</li>
+                    <li class="fragment">Palabras reservadas</li>
+                    <li class="fragment">Punto y coma (;)</li>
+                </ul>
+				</section>
+				<section id="transitions">
+					<h2>Comentarios</h2>
+                <p>Existen dos tipos de comentarios:</p>
+                <div class="list-group">
+                        <pre class="prettyprint
+                            linenums">// comentario simple</pre>
+                        <br />
+                        <pre class="prettyprint linenums">/* comentario
+						de varias
+						lineas */</pre>
+                </div>
+				</section>
+				<section>
+
+					 <h2>Literales</h2>
+                
+                <table class="table table-condensed">
+                    <tr>
+                        <td>Números enteros:</td>
+                        <td>192</td>
+                    </tr>
+                    <tr>
+                        <td>Números flotantes:</td>
+                        <td>1.4</td>
+                    </tr>
+                    <tr>
+                        <td>Cadenas de texto:</td>
+                        <td>"Hola mundo", 'Hola mundo'</td>
+                    </tr>
+                    <tr>
+                        <td>Valores lógicos:</td>
+                        <td>true, false</td>
+                    </tr>
+                    <tr>
+                        <td>Expresiones regulares</td>
+                        <td>/[A-Za-z]/</td>
+                    </tr>
+                    <tr>
+                        <td>Valor nulo:</td>
+                        <td>null</td>
+                    </tr>
+                    <tr>
+                        <td>Valor indefinido:</td>
+                        <td>undefined</td>
+                    </tr>
+                </table>
+            
+				</section>
+				<section>
+					<h2>Identificadores</h2>
+                <p>Los identificadores en javascript comienzan con una letra,
+                una barra baja (_), o un caracter de dolar ($). </p><p>Seguidos por
+                letras, números, barras bajas, y caracteres de dolar</p>
+                <h3>Ejemplos</h3>
+                <pre class="prettyprint linenums">
+var contador;
+var _indice;
+var $indice;
+var $__$__$;</pre>
+				</section>
+				<section>
+				<section>
+					<h2>Palabras reservadas</h2>
+                <div class="row">
+                    <table class="table table-bordered ">
+<tr><td>abstract</td><td>else</td><td>instanceof</td><td>super</td></tr>
+<tr><td>boolean</td><td>enum</td><td>int</td><td>switch</td></tr>
+<tr><td>break</td><td>export</td><td>interface</td><td>synchronized</td></tr>
+<tr><td>byte</td><td>extends</td><td>let</td><td>this</td></tr>
+<tr><td>case</td><td>false</td><td>long</td><td>throw</td></tr>
+                    </table>
+                </div>
+				</section>
+				<section>
+					 <h2>Mas palabras reservadas</h2>
+                <div class="row">
+                    <table class="table table-bordered ">
+<tr><td>debugger</td><td>goto</td><td>protected</td><td>var</td></tr>
+<tr><td>default</td><td>if</td><td>public</td><td>void</td></tr>
+<tr><td>delete</td><td>implements</td><td>return</td><td>volatile</td></tr>
+<tr><td>do</td><td>import</td><td>short</td><td>while</td></tr>
+<tr><td>double</td><td>in</td><td>static</td><td>with</td></tr>
+                    </table>
+                </div>
+				</section>
+				<section>
+					 <h2>Todavía mas palabras reservadas</h2>
+                <div class="row">
+                    <table class="table table-bordered ">
+<tr><td>debugger</td><td>goto</td><td>protected</td><td>var</td></tr>
+<tr><td>default</td><td>if</td><td>public</td><td>void</td></tr>
+<tr><td>delete</td><td>implements</td><td>return</td><td>volatile</td></tr>
+<tr><td>do</td><td>import</td><td>short</td><td>while</td></tr>
+<tr><td>double</td><td>in</td><td>static</td><td>with</td></tr>
+                    </table>
+                </div>
+				</section>
+				</section>
+				<section>
+					 <h2>Punto y coma (;)</h2>
+                 <p>Es posible el uso del caracter (;) para la separación de
+                 sentencias, sin embargo, esta tambien puede omitirse si estos
+                 están en diferentes lineas</p>
+                 <p>Los interpretes de JavaScript, tratan a los fines de linea
+                 como final de una sentencia, si y solo si, la siguiente
+                 sentencia no puede interpretarse como continuación de la
+                 anterior.</p>
+                 <p>Pueden verse varios criterios para tomar una decisión.</p>
+                 <p>Mas información: <a
+                 href="http://mislav.uniqpath.com/2010/05/semicolons/">
+                 Semicolons in JavaScript are optional</a></p>
+				</section>
+				<section>
+					 <h2>Variables, </h2><h2>declaraciones, </h2><h2>y expresiones</h2>
+                <ul >
+                    <a><li class="fragment" >Tipos de datos</li></a>
+                    <a><li class="fragment" >Condicionales</li></a>
+                    <a><li class="fragment" >Iteradores</li></a>
+                    <a><li class="fragment" >Captura de excepciones</li></a>
+                </ul>
+				</section>
+				<section>
+					 <h2>Tipos de datos</h2>
+                <p>Existen dos categorias:</p>
+                <table class="table" >
+                    <tr >
+                        <td class="fragment">
+                            <h3 >Tipos primitivos:</h3>
+                            <a><ul class="list-group">
+                            <li class="fragment">Números</li>
+                            <li class="fragment">Cadenas de texto</li>
+                            <li class="fragment">Valores lógicos</li>
+                            </ul></a>
+                        </td>
+                        <td class="fragment">
+                            <h3>Tipos objeto:</h3>
+                            <a><ul class="list-group">
+                            <li class="fragment">Objetos</li>
+                            <li class="fragment">Arreglos</li>
+                            <li class="fragment">Funciones</li>
+                            </ul></a>
+                        </td>
+                    </tr>
+                </table>
+				</section>
+				<section>
+				<section>
+					<h2>Números</h2>
+                <p>Ejemplos:</p>
+                <pre >  12 // número entero en base decimal.
+0345 // número entero en base octal.
+0xFF // número entero en base hexadecimal.
+
+3.141592654 // número decimal.
+.234955     // número decimal.
+6.023e23    // número decimal en notación exponencial.
+                </pre>
+				</section>
+				<section>
+					<h2>operadores númericos</h2>
+                <p>Ejemplo:</p>
+                <pre >
+                	<code>
+                	  var a=12; var b=20;
+                	console.log(a+b);
+            </code>
+                </pre>
+				</section>
+					
+				</section>
+				<section>
+				<section>
+					 <h2>Number</h2>
+                <p><em>Number</em> es la representación de tipo objeto de un
+                tipo númerico.</p>
+                <div class="row text-right">
+                    <a target="_blank" class="glyphicon glyphicon-upload"
+                       href="http://www.w3schools.com/js/js_numbers.asp"> Referencia</a>
+                </div>
+                <h2>Math</h2>
+                <p><em>Math</em> es el objeto que concentra multiples constantes
+                y funciones matematicas.</p>
+                <div class="row text-right">
+                    <a target="_blank" class="glyphicon glyphicon-upload"
+                       href="http://www.w3schools.com/js/js_math.asp"> Referencia</a>
+  				
+  				</section>
+  				
+				<section>
+					<h2>ejemplos con MATH</h2>
+					<pre>
+						<code>
+							var a = 11.2020202;
+							var b = Math.round(a);
+							console.log(a);
+							console.log(b);
+						</code>
+					</pre>
+				</section>
+				</section>
+				<section>
+				<section>
+					<h2>Date</h2>
+                <p><em>Date</em> es el objeto utilizado para la representación
+                de fechas.</p>
+                <p>Internamente, esta representación es un número que representa
+                una cuenta de los milisegundos transcurridos desde la fecha:
+                1 de enero de 1970.</p>
+                <p>Pueden verse mas sobre los sistema de tiempo en: <br />
+                <a target="_blank"
+                   href="http://en.wikipedia.org/wiki/System_time">
+                http://en.wikipedia.org/wiki/System_time</a></p>
+                <div class="row text-right">
+                    <a target="_blank" class="glyphicon glyphicon-upload"
+                       href="http://www.w3schools.com/js/js_dates.asp"> Referencia</a>
+                </div>
+				</section>
+				<section>
+					<h2>ejemplos de date</h2>
+					<pre>
+						
+							var ahora = new Date();
+							var a = new Date("October 13, 2014 11:13:00");
+							var b = new Date(99,5,24,11,33,0);
+							var c = ahora.toDateString();
+						
+					</pre>
+				</section>
+				</section>
+				
+				<section>
+					<h2>operadores</h2>
+					<ul>
+						<li><a>Operadores Aritmeticos</a>
+						</li>
+						<li><a >Operadores de Asignacion</a></li>
+						<li><a >Operadores Comparacion</a></li>
+						<li><a >Operadores Logicos</a></li>
+					</ul>
+					<small>Referencia: <a href="http://www.w3schools.com/jsref/jsref_operators.asp">http://www.w3schools.com/jsref/jsref_operators.asp</a></small>
+				</section>
+				<section>
+					<h2>operadores aritméticos</h2>
+					<div align="center"><center>
+
+<table class="table">
+  <tr>
+    <td width="103" align="center"><strong>Operador</strong></td>
+    <td width="57" align="center"><strong>Símbolo</strong></td>
+    <td width="293" align="center"><strong>Acción</strong></td>
+  </tr>
+  <tr>
+    <td width="103" align="center"><p align="center">Suma</td>
+    <td width="57"><p align="center">+</td>
+    <td width="293">Suma dos operandos</td>
+  </tr>
+  <tr>
+    <td width="103" align="center"><p align="center">Resta</td>
+    <td width="57"><p align="center">-</td>
+    <td width="293">Reste el segundo operando del primero</td>
+  </tr>
+  <tr>
+    <td width="103" align="center"><p align="center">Multiplicación</td>
+    <td width="57"><p align="center">*</td>
+    <td width="293">Multiplica los dos operandos</td>
+  </tr>
+  <tr>
+    <td width="103" align="center">División</td>
+    <td width="57"><p align="center">/</td>
+    <td width="293">Divide el primer operando por el segundo</td>
+  </tr>
+  <tr>
+    <td width="103" align="center">Resto (módulo)</td>
+    <td width="57"><p align="center">%</td>
+    <td width="293">Facilita el resto de la división entre dos operandos</td>
+  </tr>
+</table>
+</center></div>
+				</section>
+				<section>
+					<h2>operadores aritméticos</h2>
+					<p>Los <strong>operadores aritméticos</strong> son binarios o unitarios. Los operadores unitarios
+<strong>modifican el valor al que se aplican</strong> y son: </p>
+<div align="center"><center>
+
+<table class="table">
+  <tr>
+    <td width="94" align="center"><strong>Operador</strong></td>
+    <td width="74" align="center"><strong>Símbolo</strong></td>
+    <td width="220" align="center"><strong>Acción</strong></td>
+  </tr>
+  <tr>
+    <td width="94"><p align="center">Incremento</td>
+    <td width="74"><p align="center">++</td>
+    <td width="220">Incrementa una unidad</td>
+  </tr>
+  <tr>
+    <td width="94"><p align="center">Disminución</td>
+    <td width="74"><p align="center">--</td>
+    <td width="220">Disminución</td>
+  </tr>
+  <tr>
+    <td width="94"><p align="center">Menos unitario</td>
+    <td width="74"><p align="center">-</td>
+    <td width="220">Vuelve negativo un número</td>
+  </tr>
+</table>
+</center></div>
+
+				</section>
+				<section>
+					<h2>operadores de asignación </h2>
+					<p align="center"><a><I>variable=variable <strong>operador</strong> expresión</I></a></p>
+
+<p>pueden cambiarse en:</p>
+
+<p align="center"><a><I>variable <strong>operador =</strong> expresión</I></a></p>
+
+<p>es decir, se tiene la siguiente tabla:</p>
+<div align="center"><center>
+
+<table class="table">
+  <tr>
+    <td width="50%" align="center"><strong>Escritura compacta</strong></td>
+    <td width="50%" align="center"><strong>Escritura equivalente</strong></td>
+  </tr>
+  <tr>
+    <td width="50%" align="center">x += y</td>
+    <td width="50%" align="center">x = x + y</td>
+  </tr>
+  <tr>
+    <td width="50%" align="center">x -= y</td>
+    <td width="50%" align="center">x = x - y</td>
+  </tr>
+  <tr>
+    <td width="50%" align="center">x *= y</td>
+    <td width="50%" align="center">x = x * y</td>
+  </tr>
+  <tr>
+    <td width="50%" align="center">x /= y</td>
+    <td width="50%" align="center">x = x / y</td>
+  </tr>
+  <tr>
+    <td width="50%" align="center">x %= y</td>
+    <td width="50%" align="center">x = x % y</td>
+  </tr>
+</table>
+</center></div>
+
+				</section>
+				<section>
+					<h2>operadores de Comparación</h2>
+					<div align="center"><center>
+
+<table class="table">
+  <tr>
+    <td width="50%" align="center"><strong>Operador</strong></td>
+    <td width="50%" align="center"><strong>Acción</strong></td>
+  </tr>
+  <tr>
+    <td width="50%" align="center">&gt;</td>
+    <td width="50%" align="center">Mayor que</td>
+  </tr>
+  <tr>
+    <td width="50%" align="center">&gt;=</td>
+    <td width="50%" align="center">Mayor o igual</td>
+  </tr>
+  <tr>
+    <td width="50%" align="center">&lt;</td>
+    <td width="50%" align="center">Menor que</td>
+  </tr>
+  <tr>
+    <td width="50%" align="center">&lt;=</td>
+    <td width="50%" align="center">Menor o igual</td>
+  </tr>
+  <tr>
+    <td width="50%" align="center">==</td>
+    <td width="50%" align="center">Igual</td>
+  </tr>
+  <tr>
+    <td width="50%" align="center">!=</td>
+    <td width="50%" align="center">Distinto</td>
+  </tr>
+</table>
+</center></div>
+
+				</section>
+				<section>
+					<h2>operadores Lógicos</h2>
+					<p>Los <strong>operadores lógicos</strong> son (el NOT es un <em>operador unitario</em>):</p>
+<div align="center"><center>
+
+<table class="table">
+  <tr>
+    <td width="25%" align="center"><strong>Operador</strong></td>
+    <td width="25%" align="center"><strong>Símbolo</strong></td>
+    <td width="50%" align="center"><strong>Significado</strong></td>
+  </tr>
+  <tr>
+    <td width="25%" align="center">AND</td>
+    <td width="25%" align="center">&amp;</td>
+    <td width="50%" align="center">AND lógico</td>
+  </tr>
+  <tr>
+    <td width="25%" align="center">OR</td>
+    <td width="25%" align="center">|</td>
+    <td width="50%" align="center">OR lógico</td>
+  </tr>
+  <tr>
+    <td width="25%" align="center">AND</td>
+    <td width="25%" align="center">&amp;&amp;</td>
+    <td width="50%" align="center">AND valoración</td>
+  </tr>
+  <tr>
+    <td width="25%" align="center">OR</td>
+    <td width="25%" align="center">| |</td>
+    <td width="50%" align="center">OR valoración</td>
+  </tr>
+  <tr>
+    <td width="25%" align="center">XOR</td>
+    <td width="25%" align="center">^</td>
+    <td width="50%" align="center">OR exclusivo</td>
+  </tr>
+  <tr>
+    <td width="25%" align="center">NOT</td>
+    <td width="25%" align="center">!</td>
+    <td width="50%" align="center">Negación</td>
+  </tr>
+</table>
+</center></div>
+				</section>
+				<section>
+					<p> Las tablas de verdad correspondientes son:</p>
+<div align="center"><center>
+
+<table class="table">
+  <tr>
+    <td width="10%" align="center">X</td>
+    <td width="10%" align="center">Y</td>
+    <td width="20%" align="center">X&amp;&amp;Y</td>
+    <td width="20%" align="center">X| |Y</td>
+    <td width="20%" align="center">X^Y</td>
+    <td width="20%" align="center">!X</td>
+  </tr>
+  <tr>
+    <td width="10%" align="center">0</td>
+    <td width="10%" align="center">0</td>
+    <td width="20%" align="center">0</td>
+    <td width="20%" align="center">0</td>
+    <td width="20%" align="center">0</td>
+    <td width="20%" align="center">1</td>
+  </tr>
+  <tr>
+    <td width="10%" align="center">0</td>
+    <td width="10%" align="center">1</td>
+    <td width="20%" align="center">0</td>
+    <td width="20%" align="center">1</td>
+    <td width="20%" align="center">1</td>
+    <td width="20%" align="center">1</td>
+  </tr>
+  <tr>
+    <td width="10%" align="center">1</td>
+    <td width="10%" align="center">0</td>
+    <td width="20%" align="center">1</td>
+    <td width="20%" align="center">1</td>
+    <td width="20%" align="center">0</td>
+    <td width="20%" align="center">0</td>
+  </tr>
+  <tr>
+    <td width="10%" align="center">1</td>
+    <td width="10%" align="center">1</td>
+    <td width="20%" align="center">0</td>
+    <td width="20%" align="center">0</td>
+    <td width="20%" align="center">1</td>
+    <td width="20%" align="center">0</td>
+  </tr>
+</table>
+</center></div>
+<small> <a href="http://www.w3schools.com/js/js_comparisons.asp">referencia:</a></small>
+
+				</section>
+				</section>
+				<section>
+					 <h3>Cadenas de texto</h3>
+                <p>Puede utilizarse las comillas simples o las comillas dobles
+                como delimitadores validos para la declaración de una variable
+                tipo cadena de texto.</p>
+                <p><strong>Ejemplos:</strong></p>
+                <pre class="prettyprint linenums">var a='cadena de texto'
+var b="cadena de texto"
+var c='aqui un "ejemplito"'
+var d="un ejemplo 'mas'"</pre>
+				</section>
+				
+				<section>
+					<h3>Procesamiento de cadenas (I)</h3>
+                <p>Una cadena puede verse como un arreglo de caracteres
+                inmutable.</p>
+                <p><strong>Ejemplos:</strong></p>
+                <pre class="prettyprint linenums">var a='cadena de texto'
+console.log(a[5]) // a</pre>
+				</section>
+				<section>
+					<p><h2>Funciones de cadena</h2></p>
+                <pre class="prettyprint linenums">var s = "hello, world"
+s.charAt(0)          // => "h"
+s.charAt(s.length-1) // => "d"
+s.substring(1,4)     // => "ell"
+s.indexOf("l")       // => 2
+s.lastIndexOf("l")   // => 10
+s.split(", ")        // => ["hello", "world"]
+s.replace("h", "H")  // => "Hello, world"
+s.toUpperCase()      // => "HELLO, WORLD"</pre>
+				</section>
+				<section>
+					<h2>Escapadores</h2>
+                <pre>\O          The NULL character
+\b          Backspace
+\t          Horizontal tab
+\n          Newline
+\v          Vertical tab
+\f          Form feed
+\r          Carriage return
+\"          Double quote
+\'          Apostrophe or single quote
+\\          Backslash
+\x[XX]      The Latin-1
+\u[XXXX]    The Unicode character</pre>
+<small>referencia: <a href="http://unicode-table.com/en/#control-character">unicode character table</a></small>
+				</section>
+				<section>
+					<h2>Valores logicos</h2>
+                <pre class="prettyprint linenums">var a=true
+var b=false</pre>
+                <p>Son valores falsos los siguientes:</p>
+                <table class="table">
+                    <tr>
+                        <td>undefined</td>
+                        <td>null</td>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td>-0</td>
+                    </tr>
+                    <tr>
+                        <td>NaN</td>
+                        <td>''</td>
+                    </tr>
+                </table>
+				</section>
+				<section>
+					<h3>String</h3>
+                <p><em>String</em> es la representación de tipo objeto de una
+                cadena.</p>
+                <div class="row text-right">
+                    <a target="_blank" class="glyphicon glyphicon-upload"
+                       href="web/5.html"> Referencia</a>
+                </div>
+                <h3>Boolean</h3>
+                <p><em>Boolean</em> es la representación de tipo objeto de una
+                variable lógica.</p>
+                <div class="row text-right">
+                    <a target="_blank" class="glyphicon glyphicon-upload"
+                       href="web/6.html"> Referencia</a>
+                </div>
+				</section>
+				<section>
+					 <h2>valor nulo y valor indefinido</h2>
+                <p>Representan la ausencia de un valor en una variable o en el
+                retorno de una funcion.</p>
+                <pre>var a=null;
+var b=undefined;
+var b1 = "myVar";//definido 
+var b2;//undefinido
+</pre>
+				</section>
+				<section>
+					 <h2>valor Nan</h2>
+                <p>Representan que no es un numero legalmente (Not a Number.</p>
+                <pre>var a=isNaN(123);//false
+var b=isNaN("2005/12/12");//true
+var c=isNaN("hola");//true</pre>
+				</section>
+				<section>
+					<h1>Condicionales</h1>
+                <p>Las condicionales estan definidas de la misma forma que en el
+                lenguaje de programación Java.</p>
+                <ul>
+                    <a><li>if</li></a>
+                    <a><li>else if</li></a>
+                    <a><li>switch</li></a>
+                </ul>
+				</section>
+				<section>
+					<h1>if</h1>
+                <pre>if(expresion){
+    sentencias
+}</pre>
+                <pre>if(expresion){
+    sentencias
+}else{
+    sentencias
+}</pre>
+            
+			</section>
+			<section>
+			<section>
+				<h1>else if</h1>
+                <pre>if(expresion){
+    sentencias
+}else if{
+    sentencias
+}else{
+    sentencias
+}</pre>
+			</section>
+			<section>
+				<h1>ejemplos</h1>
+				<pre>
+	var n = 12;	
+	if (n >= 0)
+  {
+    console.log("Numero mayor a 0");
+  }
+  else
+  {
+  	console.log("Numero menor a 0");
+  }
+					
+				</pre>
+			</section>
+			</section>
+			<section>
+			<section>
+				 <h1>switch</h1>
+                <pre>switch(expresion){
+    case 1:
+        sentencias
+        break
+    case n:
+        sentencias
+        break
+    default:
+        sentencias
+}</pre>
+			</section>
+			<section>
+				<h1>ejemplos</h1>
+				<pre>
+					var valor = 1;
+					switch (valor) {
+    case 1: console.log('uno');
+            break;
+    case 2: console.log('dos');
+            break;
+    case 3: console.log('tres');
+            break;
+    case 4: console.log('cuatro');
+            break;
+    case 5: console.log('cinco');
+            break;
+    default:console.log('Ingreso un valor que no esta comprendido entre 1 y 5.');
+  }
+				</pre>
+			</section>
+			</section>
+		
+
+
+			<!--
+			<section>
+				<h2>Ejemplo</h2>
+                <pre class="prettyprint linenums">
+
+var ajax=new XMLHttpRequest()
+ajax.open('get',url)
+ajax.onload=function(){}
+ajax.send()
+			</section>
+			<section>
+				<h2>practica final</h2>
+				<p></p>
+			</section>
+			-->
+			</div> <!-- slide div -->
+
+		</div> <!-- reveal div -->
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
+
+
+
+    
